@@ -1,0 +1,12 @@
+实验二数据说明
+
+数据来自 Dense-Haze 官方 NTIRE19 下载包中选取的 20 组户外真实有雾／清晰配对图片。
+每对图片在相同原图坐标裁取 512×512，并转换为 8 位单通道灰度 PNG；未缩放，未重新生成雾。
+data/hazy/image01.png 至 image20.png：20 张 512×512 有雾输入图。
+data/GT/image01.png 至 image20.png：同名的 20 张 512×512 清晰参考图。
+
+仅用有雾输入图生成去雾结果；GT 只用于本地比较与评价。全部 20 组均供本地编写和测试使用，不另划分数据集。
+数据来源：https://data.vision.ee.ethz.ch/cvl/ntire19/dense-haze/
+文献：C. O. Ancuti, C. Ancuti, M. Sbert, R. Timofte, Dense Haze: A Benchmark for Image Dehazing with Dense-Haze and Haze-Free Images, ICIP, 2019.
+文献：C. O. Ancuti 等, NTIRE 2019 Image Dehazing Challenge Report, CVPR Workshops, 2019.
+官方页面允许使用与发布图片，要求引用上述两篇论文；图片权利归原权利人。请保留来源说明。
