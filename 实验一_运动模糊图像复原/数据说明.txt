@@ -1,0 +1,26 @@
+﻿实验一：运动模糊图像复原——数据说明
+
+数据组成
+data/blur/image01.png至image20.png：20张512×512运动模糊输入图。
+data/GT/image01.png至image20.png：20张同名512×512清晰参考图。
+全部图片均为8位单通道灰度PNG。全部20组都供本地编写、测试和评价使用，不另划分数据集。
+data/PSF/psf.mat：变量PSF，double类型，9×9矩阵；第5行均为1/9，其余为0。
+这个已知核描述水平方向、长度9像素的运动模糊，全部20张图片使用同一个核。
+
+课程数据如何生成
+清晰图来自DIV2K验证集中选取的20个场景，沿用原课程整理的512×512灰度裁剪图。
+从清晰图进行已知核的循环卷积，再加入轻微高斯噪声，量化保存为模糊输入。
+这是教师制作的可控运动模糊配对数据；不是DIV2K官方去模糊数据集，也不是实拍模糊照片。
+学生不需要重新制作模糊输入或估计模糊核。
+
+使用方式
+仅用blur输入图与已知PSF生成复原结果；GT只用于本地比较、计算PSNR/SSIM和选择参数。
+blur、GT和最终result按相同文件名配对，位置已对齐；不要更改图片尺寸或裁切输出图片。
+评价时的四周裁2像素只作用于指标计算，最终结果仍需保存完整512×512图片。
+
+来源与署名
+数据来源：https://data.vision.ee.ethz.ch/cvl/DIV2K/
+原始清晰验证图：https://data.vision.ee.ethz.ch/cvl/DIV2K/DIV2K_valid_HR.zip
+文献：E. Agustsson and R. Timofte, NTIRE 2017 Challenge on Single Image Super-Resolution:
+Dataset and Study, CVPR Workshops, 2017.
+原始图片版权归原权利人；数据用于课程教学和学术研究，请保留来源说明。
