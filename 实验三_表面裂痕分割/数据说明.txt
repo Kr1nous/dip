@@ -1,0 +1,11 @@
+实验三数据说明
+
+数据来自 DeepCrack 官方数据集，选取 20 组表面裂痕图片与人工标注。
+每对输入与标注在相同位置裁取 384×384，不缩放。输入转为 8 位单通道灰度 PNG，标注保留原有 0/255 二值掩膜，不重画、不膨胀。
+data/image/image01.png 至 image20.png：20 张 384×384 灰度输入图。
+data/GT/image01.png 至 image20.png：同名的 20 张 384×384 人工裂痕掩膜；裂痕为白色 255，背景为黑色 0。
+
+仅用输入图生成分割结果；GT 只用于本地比较与评价。全部 20 组均供本地编写和测试使用，不另划分数据集。
+数据来源：https://github.com/yhlleo/DeepCrack ，仓库中的 dataset/DeepCrack.zip。
+文献：Y. Liu 等, DeepCrack: A Deep Hierarchical Feature Learning Architecture for Crack Segmentation, Neurocomputing 338 (2019), 139–153. DOI: 10.1016/j.neucom.2019.01.036。
+作者声明拥有部分原始图片与全部标注的版权，数据限于非商业研究与教育用途。本课程仅使用数据，实验采用传统方法，请保留来源及用途说明。
